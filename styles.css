@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('dinosaur-landscape.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 100px); /* 6 saraketta */
+    grid-gap: 10px;
+}
+
+.door {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.door.open {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.content {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+}
+
+.content.visible {
+    display: block;
+}
