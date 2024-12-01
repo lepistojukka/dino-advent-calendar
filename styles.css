@@ -42,6 +42,18 @@ body {
     color: black;
 }
 
+.door.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.door.locked:hover {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
 /* Responsiivisuus mobiililaitteille */
 @media (max-width: 768px) {
     #calendar {
