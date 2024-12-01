@@ -12,36 +12,59 @@ body {
 
 #calendar {
     display: grid;
-    grid-template-columns: repeat(6, 100px); /* 6 saraketta */
+    grid-template-columns: repeat(6, 100px); /* Oletus: 6 saraketta */
     grid-gap: 10px;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .door {
-    width: 100px;
-    height: 100px;
-    border: 2px dashed white;
-    text-align: center;
-    line-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     color: white;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
     background-color: rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
-}
-
-.door.open {
-    background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
-}
-
-.content {
-    display: none;
+    cursor: pointer;
     text-align: center;
-    font-size: 18px;
+}
+
+.door:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.7);
     color: black;
 }
 
-.content.visible {
-    display: block;
+/* Responsiivisuus mobiililaitteille */
+@media (max-width: 768px) {
+    #calendar {
+        grid-template-columns: repeat(4, 80px); /* Pienennetään sarakkeiden määrää ja kokoa */
+        grid-gap: 8px;
+    }
+
+    .door {
+        width: 80px;
+        height: 80px;
+        font-size: 18px; /* Pienempi fonttikoko */
+    }
+}
+
+@media (max-width: 480px) {
+    #calendar {
+        grid-template-columns: repeat(3, 60px); /* Vielä vähemmän sarakkeita pienille näytöille */
+        grid-gap: 6px;
+    }
+
+    .door {
+        width: 60px;
+        height: 60px;
+        font-size: 14px; /* Pienempi fonttikoko */
+    }
 }
